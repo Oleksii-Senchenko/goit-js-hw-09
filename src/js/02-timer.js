@@ -19,6 +19,7 @@ const options = flatpickr("#datetime-picker", {
   defaultDate: new Date(),
   minuteIncrement: 1,
   onClose(selectedDates) {
+    console.log(selectedDates);
     const selectedDate = selectedDates[0];
     if (selectedDate <= new Date()) {
       alert("Please choose a date in the future")
@@ -33,6 +34,7 @@ const options = flatpickr("#datetime-picker", {
 btnEl.addEventListener('click', timer)
 
 function timer() {
+  console.log(options.selectedDates);
   const selectedDate = options.selectedDates[0]
   const interval = setInterval(() => {
     const diferenceTime = selectedDate - new Date()
